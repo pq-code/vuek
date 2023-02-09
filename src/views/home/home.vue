@@ -1,30 +1,30 @@
-<script setup lang='ts'>
-import { ref } from 'vue';
-import { Search } from '@element-plus/icons-vue'
-import screenfull from 'screenfull';
-import { debounce } from '../../utils/index';
-import Pside from '@/components/p-side/side.vue'
-import { navigation } from './navigation'
+<script setup lang="ts">
+import { ref } from "vue";
+import { Search } from "@element-plus/icons-vue";
+// import screenfull from 'screenfull';
+import { debounce } from "../../utils/index";
+import Pside from "@/components/p-side/side.vue";
+import { navigation } from "./navigation";
 
-let lengthWidth = ref(window.innerWidth > 1000 ? true : false)
+let lengthWidth = ref(window.innerWidth > 1000 ? true : false);
 const fn = function (fnName: string) {
     if (screen) {
-        if (screenfull.isEnabled) {
-            const element: any = document.getElementById('main');
-            screenfull.request(element);
-        }
+        // if (screenfull.isEnabled) {
+        //     const element: any = document.getElementById('main');
+        //     screenfull.request(element);
+        // }
     }
 };
 
 const data = ref({
-    search: '',
+    search: "",
     homeScreen: [],
     searchSelect: [],
     iconUl: [
-        { icon: 'icon-quanping', fn: 'screen' },
-        { icon: 'icon-quanping', fn: 'screen' },
-    ]
-})
+        { icon: "icon-quanping", fn: "screen" },
+        { icon: "icon-quanping", fn: "screen" },
+    ],
+});
 
 // const cache = (e: string) => {
 //     data.value.homeScreen.push(e)
@@ -32,28 +32,22 @@ const data = ref({
 //     sessionStorage.setItem('homeScreen', data.value.homeScreen);
 // }
 
-const homeScreenFn = (e: string) => {
-
-}
-
+const homeScreenFn = (e: string) => { };
 
 let onWindowResize = () => {
-    return lengthWidth.value = window.innerWidth >= 1000
+    return (lengthWidth.value = window.innerWidth >= 1000);
 };
 
-window.addEventListener('resize', onWindowResize);
-
+window.addEventListener("resize", onWindowResize);
 </script>
 <template>
     <div class="honeContainer">
         <div class="honeContainer-side"
-             :style="{ 'width': lengthWidth ? '220px' : '80px' }">
+             :style="{ width: lengthWidth ? '220px' : '80px' }">
             <Pside :lengthWidth="lengthWidth"
                    :dataList="navigation">
                 <template #sideHeadLi>
-                    <div class="user-info">
-
-                    </div>
+                    <div class="user-info"></div>
                 </template>
             </Pside>
         </div>
@@ -77,9 +71,7 @@ window.addEventListener('resize', onWindowResize);
                             <i :class="['iconfont', item.icon]"
                                @click="fn(item.fn)"></i>
                         </li>
-                        <div class="user-info">
-
-                        </div>
+                        <div class="user-info"></div>
                     </ol>
                 </div>
             </div>
@@ -165,7 +157,6 @@ window.addEventListener('resize', onWindowResize);
                         font-size: 26px;
                     }
                 }
-
             }
         }
 

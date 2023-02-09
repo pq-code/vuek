@@ -1,27 +1,27 @@
-<script setup lang='ts'>
-import { ref } from 'vue';
-import Map from './map/map.vue'
+<script setup lang="ts">
+import { ref } from "vue";
+import Map from "./map/map.vue";
 
-const mapRef = ref()
+const mapRef = ref();
 
 const drawPolygon = () => {
-    mapRef.value?.drawPolygon()
-}
+    mapRef.value?.drawPolygon();
+};
 const cuttingFn = () => {
-    mapRef.value?.cuttingFn()
-}
+    mapRef.value?.cuttingFn();
+};
 const editFn = () => {
-    mapRef.value?.editFn()
-}
+    mapRef.value?.editFn();
+};
 const mergeFn = () => {
-    mapRef.value?.mergeFn()
-}
+    mapRef.value?.mergeFn();
+};
 const boxSelectionFn = () => {
-    mapRef.value?.boxSelectionFn()
-}
+    mapRef.value?.boxSelectionFn();
+};
 const deleteFn = () => {
-    mapRef.value?.deleteFn()
-}
+    mapRef.value?.deleteFn();
+};
 </script>
 <template>
     <div class="map-center">
@@ -57,16 +57,13 @@ const deleteFn = () => {
             </div>
             <Map ref="mapRef"></Map>
         </div>
-        <div class="mapData-Tabel">
-
-        </div>
+        <div class="mapData-Tabel"></div>
     </div>
 </template>
 <style scoped lang="less">
-::v-deep .hemeMain {
+::v-deep(.hemeMain) {
     overflow: auto;
 }
-
 
 .map-center {
     display: flex;

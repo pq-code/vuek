@@ -1,45 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "useDefineForClassFields": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "strict": true,
-        "jsx": "preserve",
-        "sourceMap": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "importHelpers": true,
-        // 编译过程中打印文件名
-        "listFiles": true,
-        // 移除注释
-        "removeComments": true,
-        "suppressImplicitAnyIndexErrors": true,
-        // 允许编译javascript文件
-        "allowJs": true,
-        "esModuleInterop": true,
-        "lib": [
-            "esnext",
-            "dom"
-        ],
-        "skipLibCheck": true,
-        "types": [
-            "vite/client",
-            "@webgpu/types"
-        ],
-        "baseUrl": "./",
-        "paths": {
-            "@/*": ["src/*"],
-            "#/*": ["types/*"]
-        }
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.d.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue"
-, "src/views/map/gaodeMap/map/util/drawPolygonFn.js", "src/views/map/gaodeMap/map/util/drawPolygonFn.js"    ],
-    "references": [{
-        "path": "./tsconfig.node.json"
-    }]
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ]
 }
